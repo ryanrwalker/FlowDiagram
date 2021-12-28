@@ -30,11 +30,10 @@ jobs:
           npm ci
           npm run build
 
-      # Push
+      # Push the build artifacts to the pages branch
       - name: Push Build to Pages Branch
         run: |
-          git pull
-          git checkout -B ${PAGES_BRANCH}
+          git checkout -B ${PAGES_BRANCH} --detach
           find . -mindepth 1 -regextype posix-extended ! -regex '^./(.git|dist)($|/.*)' -delete
           mv ./dist/* . && rm -r ./dist
           touch .nojekyll
@@ -42,4 +41,4 @@ jobs:
           git config user.email github-actions@github.com
           git add . */.*
           git commit -m "${GITHUB_EVENT_NAME}-${GITHUB_REF_NAME}-${GITHUB_ACTOR}"
-          git push -f origin pages
+          git push -f origin ${PAGES_BRANCH}
