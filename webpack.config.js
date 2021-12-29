@@ -19,10 +19,11 @@ module.exports = {
 			template: "./static/index.html"
 		}),
 		new MiniCssExtractPlugin({
-			filename: "index.css"
+			filename: "third-party.css"
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
+				{ from: "static/index.css", to: "index.css" },
 				{ from: "static/img", to: "img" }
 			]
 		}),
