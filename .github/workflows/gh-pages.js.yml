@@ -33,7 +33,7 @@ jobs:
       # Push the build artifacts to the pages branch
       - name: Push Build to Pages Branch
         run: |
-          git checkout -B ${PAGES_BRANCH} --detach
+          git checkout -B ${PAGES_BRANCH}
           find . -mindepth 1 -regextype posix-extended ! -regex '^./(.git|dist)($|/.*)' -delete
           mv ./dist/* . && rm -r ./dist
           touch .nojekyll
