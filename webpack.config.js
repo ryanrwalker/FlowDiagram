@@ -4,26 +4,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+
+
 // https://webpack.js.org/configuration/
 module.exports = {
 
 	entry: './src/index.js',
 
 	output: {
-		filename: 'index.js',
+		filename: 'flow-diagram.[fullhash].js',
 	},
 
 	plugins: [
 		new HtmlWebpackPlugin({
-			inject: "body",
-			template: "./static/index.html"
+			title: "flow-diagram"
 		}),
 		new MiniCssExtractPlugin({
-			filename: "third-party.css"
+			filename: "flow-diagram.[fullhash].css"
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
-				{ from: "static/index.css", to: "index.css" },
 				{ from: "static/img", to: "img" }
 			]
 		}),

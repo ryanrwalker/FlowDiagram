@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 import {Configuration} from "./models";
 import data from "./data";
@@ -132,6 +133,6 @@ class FlowDiagram extends React.Component {
  */
 ReactDOM.render( //
 	(<FlowDiagram/>), //
-	document.getElementById("flow-diagram") //
+	document.body //
 );
 
