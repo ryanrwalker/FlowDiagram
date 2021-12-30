@@ -68,13 +68,13 @@ class Tag extends React.Component {
 					 }}>
 
 			{tag.icon && // Render the icon
-			<img src={"/img/" + tag.icon} alt={alt}/>}
+			<img src={"img/" + tag.icon} alt={alt}/>}
 
 			{!tag.icon && tag.name?.length > 0 && // Render the name
 			<span>{tag.name}</span>}
 
 			{tag.links?.length > 1 && //
-			<img src={"/img/down-arrow.svg"} alt={alt}/>}
+			<img src={"img/down-arrow.svg"} alt={alt}/>}
 
 			{this.state.open === true && //
 			<div className="fd-link-container" key={tag.id + "-links"}>

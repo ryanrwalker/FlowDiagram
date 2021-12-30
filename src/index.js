@@ -24,7 +24,7 @@ class FlowDiagram extends React.Component {
 		this.state = {
 			views: [
 				{
-					breadcrumb: <div><Icon icon={"/img/diagram-3-fill.svg"}/> flow-diagram</div>,
+					breadcrumb: <div><Icon icon={"img/diagram-3-fill.svg"}/> flow-diagram</div>,
 					type: MainView,
 					props: {
 						onClickResource: this.onClickResource,
@@ -104,7 +104,7 @@ class FlowDiagram extends React.Component {
 									  className={isCurrent ? "me-auto" : ""}
 									  onClick={() => this.onClickBreadcrumb(view, index)}>
 						{view.breadcrumb || "Unknown"}
-						{!isCurrent && <Icon icon={"/img/caret-right-fill.svg"} />}
+						{!isCurrent && <Icon icon={"img/caret-right-fill.svg"} />}
 					</Nav.Link>);
 				})}
 
@@ -112,7 +112,7 @@ class FlowDiagram extends React.Component {
 				<Nav.Link onClick={() => this.setState(state => ({
 					locked: !state.locked
 				}))}>
-					<Icon icon={this.state.locked ? "/img/lock-fill.svg" : "/img/unlock-fill.svg"} />
+					<Icon icon={this.state.locked ? "img/lock-fill.svg" : "img/unlock-fill.svg"} />
 					<span className={"ms-2"}>{this.state.locked ? "Locked" : "Unlocked"}</span>
 				</Nav.Link>
 			</Nav>

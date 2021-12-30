@@ -11,7 +11,7 @@ class Resource extends React.Component {
 		return (<div className="fd-node" title={id}>
 
 			<div className="fd-title">
-				<img src={"/img/" + (icon || "default.svg")} title={name} alt={name}/>{name}
+				<img src={"img/" + (icon || "default.svg")} title={name} alt={name}/>{name}
 			</div>
 
 			<div className="fd-content">{description}</div>
